@@ -1,0 +1,34 @@
+name: audiocutter_example
+description: Demonstrates how to use the audiocutter plugin.
+
+
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  audioplayers: 
+  dependencies:
+  curved_navigation_bar: ^0.3.2
+  path_provider: ^1.6.5
+  flutter_ffmpeg:
+  record_mp3:
+  flutter_xlider: ^3.2.0
+  permission_handler: ^4.2.0+hotfix.3
+  flutter_timer:
+  toast:
+  fluttertoast: ^4.0.1
+  speech_to_text: ^2.0.1
+  sembast: ^2.4.1+1
+  flutter_spinkit: "^4.1.2"
+  esys_flutter_share: ^1.0.2
+  solid_bottom_sheet: ^0.1.9
+  audiocutter: ^0.0.9
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - bensound-sunny.mp3
