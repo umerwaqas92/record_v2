@@ -1,6 +1,8 @@
 
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
+import 'package:esys_flutter_share/esys_flutter_share.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
@@ -63,6 +65,7 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
                 color: Colors.black,
                 child: Text("Render"),
                 onPressed: () async {
+
                   if (           File(GlobalVariable.recordFilePath ).existsSync()
                   ) {
 
@@ -72,6 +75,7 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
 
 
                       _cutFilePath = path;
+
                     });
 
 
@@ -89,7 +93,7 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
               ),
             )
 
-//            ,             audioPlayer(context)
+            ,             audioPlayer(context)
 
             ,avl? Container(): Padding(
                 padding: EdgeInsets.only(left: 110.0, right: 100.0),
@@ -99,33 +103,24 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
   }
 
 
-//  Widget audioPlayer(BuildContext context)
-//  {
-//    return Container(
-//      padding: EdgeInsets.all(32.0),
-//      child: Column(mainAxisSize: MainAxisSize.min, children: [
-//
-//
-//
-//        _cutFilePath == null
-//            ? Container()
-//            : MediaPlayerWidget(url: _cutFilePath, isLocal: true),
-//
-//
-//        avl?  Padding(
-//            padding: EdgeInsets.only(left: 100.0, right: 100.0),
-//            child: RaisedButton(
-//                textColor: Colors.white,
-//                color: Colors.black,
-//                child: Text("Share"),
-//                onPressed: (){
-//
-//                })): Container(),
-//
-//
-//      ]),
-//    );
-//  }
+  Widget audioPlayer(BuildContext context)
+  {
+    return Container(
+      padding: EdgeInsets.all(32.0),
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+
+
+
+        _cutFilePath == null
+            ? Container()
+            : MediaPlayerWidget( _cutFilePath,  true,PlayerMode.MEDIA_PLAYER,null,null),
+
+
+
+
+      ]),
+    );
+  }
 
   Future<String> _cutSong() async {
     var start = audioFileStartController.toString();

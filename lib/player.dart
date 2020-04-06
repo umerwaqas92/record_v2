@@ -24,6 +24,8 @@ class MediaPlayerWidget extends StatefulWidget {
   final Function func;
 
 
+
+
   MediaPlayerWidget(this.url, this.isLocal, this.mode, this._controller,
       this.func); //      {@required
 //      this.url,
@@ -309,8 +311,11 @@ class _MediaPlayerState extends State<MediaPlayerWidget> {
                     await File(_cutFilePath).copy(url);
                     await File(path).delete();
 
-                    func();
-                    _controller.hide();
+                    if(_controller!=null){
+                      func();
+                      _controller.hide();
+                    }
+
 
 
                     print("file cut to " + _cutFilePath);
