@@ -36,6 +36,8 @@ class _Voice_to_TextState extends State<Voice_to_Text> {
       });
 
     });
+
+
     if ( available ) {
       speech.listen( onResult: (result){
 

@@ -127,32 +127,32 @@ class _ExampleAppState extends State<ExampleApp> {
                 
               }
             
-              Widget audioPlayer(BuildContext context) 
-              {
-                return Container(
-                  padding: EdgeInsets.all(32.0),
-                  child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    
-                   
-                    
-                    _cutFilePath == null
-                        ? Container()
-                        : MediaPlayerWidget(url: _cutFilePath, isLocal: true),
-
-
-                        avl?  Padding(
-  padding: EdgeInsets.only(left: 100.0, right: 100.0),
-  child: RaisedButton(
-    textColor: Colors.white,
-    color: Colors.black,
-    child: Text("Share"),
-    onPressed: (){
-  })): Container(),
-                  
-                                
-                  ]),
-                );
-              }
+//              Widget audioPlayer(BuildContext context)
+//              {
+//                return Container(
+//                  padding: EdgeInsets.all(32.0),
+//                  child: Column(mainAxisSize: MainAxisSize.min, children: [
+//
+//
+//
+//                    _cutFilePath == null
+//                        ? Container()
+//                        : MediaPlayerWidget(url: _cutFilePath, isLocal: true),
+//
+//
+//                        avl?  Padding(
+//  padding: EdgeInsets.only(left: 100.0, right: 100.0),
+//  child: RaisedButton(
+//    textColor: Colors.white,
+//    color: Colors.black,
+//    child: Text("Share"),
+//    onPressed: (){
+//  })): Container(),
+//
+//
+//                  ]),
+//                );
+//              }
             
               /// Your reason for viewing this example!!!
               ///

@@ -18,13 +18,19 @@ import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
 
 
 class Record_List extends StatefulWidget {
+
+
   @override
   _Record_ListState createState() => _Record_ListState();
 }
 
 
 
+
+
 class _Record_ListState extends State<Record_List> {
+
+
 
 
   List<io.File> files=List();
@@ -59,17 +65,28 @@ class _Record_ListState extends State<Record_List> {
   }
 
 
+  void update(){
+    selection=-1;
+    setState(() {
+
+    });
+  }
+
+
 
 
   @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
     bottomSheet: SolidBottomSheet(
 
-      body:  MediaPlayerWidget(url: _selectfFile, isLocal: true,),
+      body:  MediaPlayerWidget(_selectfFile,true,PlayerMode.MEDIA_PLAYER,_controller,update),
       controller: _controller,
       draggableBody: true,
-      maxHeight: 250,
+      maxHeight: 300,
 
     ),
       resizeToAvoidBottomInset: false,

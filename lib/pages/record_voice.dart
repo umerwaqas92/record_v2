@@ -8,6 +8,8 @@ import 'package:path_provider/path_provider.dart';
 import '../audiocutter.dart';
 import '../player.dart';
 import '../recorder.dart';
+import 'package:flutter_range_slider/flutter_range_slider.dart' as frs;
+
 
 class Record_Voice_Screen extends StatefulWidget {
   @override
@@ -87,7 +89,7 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
               ),
             )
 
-            ,             audioPlayer(context)
+//            ,             audioPlayer(context)
 
             ,avl? Container(): Padding(
                 padding: EdgeInsets.only(left: 110.0, right: 100.0),
@@ -97,33 +99,33 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
   }
 
 
-  Widget audioPlayer(BuildContext context)
-  {
-    return Container(
-      padding: EdgeInsets.all(32.0),
-      child: Column(mainAxisSize: MainAxisSize.min, children: [
-
-
-
-        _cutFilePath == null
-            ? Container()
-            : MediaPlayerWidget(url: _cutFilePath, isLocal: true),
-
-
-        avl?  Padding(
-            padding: EdgeInsets.only(left: 100.0, right: 100.0),
-            child: RaisedButton(
-                textColor: Colors.white,
-                color: Colors.black,
-                child: Text("Share"),
-                onPressed: (){
-
-                })): Container(),
-
-
-      ]),
-    );
-  }
+//  Widget audioPlayer(BuildContext context)
+//  {
+//    return Container(
+//      padding: EdgeInsets.all(32.0),
+//      child: Column(mainAxisSize: MainAxisSize.min, children: [
+//
+//
+//
+//        _cutFilePath == null
+//            ? Container()
+//            : MediaPlayerWidget(url: _cutFilePath, isLocal: true),
+//
+//
+//        avl?  Padding(
+//            padding: EdgeInsets.only(left: 100.0, right: 100.0),
+//            child: RaisedButton(
+//                textColor: Colors.white,
+//                color: Colors.black,
+//                child: Text("Share"),
+//                onPressed: (){
+//
+//                })): Container(),
+//
+//
+//      ]),
+//    );
+//  }
 
   Future<String> _cutSong() async {
     var start = audioFileStartController.toString();

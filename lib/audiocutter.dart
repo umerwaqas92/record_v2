@@ -44,7 +44,7 @@ class AudioCutter {
 
 
     var cmd =
-        "-y -i \"$path\"  -af \"volume=enable='between(t,$start,$end)':volume=1\"  $outPath2";
+        "-y -i \"$path\"  -af \"volume=enable='between(t,$start,$end)':volume=0\"  $outPath2";
     int rc = await _flutterFFmpeg.execute(cmd);
 
 
