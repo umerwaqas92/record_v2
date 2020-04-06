@@ -34,6 +34,31 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
   final audioFileStartController = 0;
   final audioFileEndController = 0;
 
+  void  showplayer() async {
+
+  if (           File(GlobalVariable.recordFilePath ).existsSync()
+  ) {
+
+//  var path = await _cutSong();
+  setState(() {
+  avl=true;
+
+
+  _cutFilePath = GlobalVariable.recordFilePath;
+  
+
+  });
+
+
+
+
+  } else {
+  avl=false;   }
+
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -51,49 +76,27 @@ class _Record_Voice_ScreenState extends State<Record_Voice_Screen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
 
-                  Recorder()])
+                  Recorder(showplayer)])
             )
             ,SizedBox(height: 50)
             ,
 
 
 
-            Padding(
-              padding: EdgeInsets.only(left: 150.0, right: 150.0),
-              child: RaisedButton(
-                textColor: Colors.white,
-                color: Colors.black,
-                child: Text("Render"),
-                onPressed: () async {
+//            Padding(
+//              padding: EdgeInsets.only(left: 150.0, right: 150.0),
+//              child: RaisedButton(
+//                textColor: Colors.white,
+//                color: Colors.black,
+//                child: Text("Render"),
+//                onPressed:showplayer,
+//                shape: new RoundedRectangleBorder(
+//                  borderRadius: new BorderRadius.circular(30.0),
+//                ),
+//              ),
+//            )
 
-                  if (           File(GlobalVariable.recordFilePath ).existsSync()
-                  ) {
-
-                    var path = await _cutSong();
-                    setState(() {
-                      avl=true;
-
-
-                      _cutFilePath = path;
-
-                    });
-
-
-
-
-                  } else {
-                    avl=false;   }
-
-
-
-                },
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(30.0),
-                ),
-              ),
-            )
-
-            ,             audioPlayer(context)
+            audioPlayer(context)
 
             ,avl? Container(): Padding(
                 padding: EdgeInsets.only(left: 110.0, right: 100.0),

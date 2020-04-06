@@ -18,10 +18,13 @@ class GlobalVariable {
 }
 
 class Recorder extends StatefulWidget {
+  final Function func;
 
+
+  Recorder(this.func);
 
   @override
-  _RecorderState createState() => _RecorderState();
+  _RecorderState createState() => _RecorderState(func);
 }
 class _RecorderState extends State<Recorder>  {
   bool isShare = false;
@@ -29,7 +32,10 @@ class _RecorderState extends State<Recorder>  {
   bool pause= false;
   bool saved = false;
   bool soundavl= false;
+  final Function func;
 
+
+  _RecorderState(this.func);
 
   Database db ;
   Future<void> initat_db() async {
@@ -93,6 +99,9 @@ record?   MaterialButton(
           Toast.show("Recording Saved", context,
                                 duration: Toast.LENGTH_SHORT,
                                 gravity: Toast.BOTTOM);
+
+          func();
+
     });
   },
   color: Colors.white38,
